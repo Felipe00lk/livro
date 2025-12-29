@@ -1,21 +1,25 @@
 
-const folhas = document.querySelectorAll(".folha");
+const paginas = document.querySelectorAll(".pagina");
 const btnAvancar = document.getElementById("avancar");
 const btnVoltar = document.getElementById("voltar");
 
-let folhaAtual = 0;
+let paginaAtual = 0;
+
+// Ordem correta (empilhamento)
+paginas.forEach((pagina, index) => {
+  pagina.style.zIndex = paginas.length - index;
+});
 
 btnAvancar.addEventListener("click", () => {
-  if (folhaAtual < folhas.length) {
-    folhas[folhaAtual].classList.add("virada");
-    folhaAtual++;
+  if (paginaAtual < paginas.length) {
+    paginas[paginaAtual].classList.add("virada");
+    paginaAtual++;
   }
 });
 
 btnVoltar.addEventListener("click", () => {
-  if (folhaAtual > 0) {
-    folhaAtual--;
-    folhas[folhaAtual].classList.remove("virada");
+  if (paginaAtual > 0) {
+    paginaAtual--;
+    paginas[paginaAtual].classList.remove("virada");
   }
 });
-oo
