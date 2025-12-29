@@ -18,3 +18,4 @@ btnVoltar.addEventListener("click", () => {
     folhas[folhaAtual].classList.remove("virada");
   }
 });
+oo
