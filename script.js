@@ -1,7 +1,28 @@
-const botao = document.getElementById("passar");
-const paginaDireita = document.getElementById("paginaDireita");
+const folhas = document.querySelectorAll(".folha");
+const btnAvancar = document.getElementById("avancar");
+const btnVoltar = document.getElementById("voltar");
 
-botao.addEventListener("click", () => {
-  paginaDireita.classList.toggle("virada");
+let folhaAtual = 0;
+
+function mostrarFolha(index) {
+  folhas.forEach((folha, i) => {
+    folha.classList.remove("ativa");
+    if (i === index) {
+      folha.classList.add("ativa");
+    }
+  });
+}
+
+btnAvancar.addEventListener("click", () => {
+  if (folhaAtual < folhas.length - 1) {
+    folhaAtual++;
+    mostrarFolha(folhaAtual);
+  }
 });
-S
+
+btnVoltar.addEventListener("click", () => {
+  if (folhaAtual > 0) {
+    folhaAtual--;
+    mostrarFolha(folhaAtual);
+  }
+});
