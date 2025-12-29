@@ -1,28 +1,17 @@
-const folhas = document.querySelectorAll(".folha");
-const btnAvancar = document.getElementById("avancar");
-const btnVoltar = document.getElementById("voltar");
 
+const folhas = document.querySelectorAll(".folha");
 let folhaAtual = 0;
 
-function mostrarFolha(index) {
-  folhas.forEach((folha, i) => {
-    folha.classList.remove("ativa");
-    if (i === index) {
-      folha.classList.add("ativa");
-    }
-  });
-}
-
-btnAvancar.addEventListener("click", () => {
-  if (folhaAtual < folhas.length - 1) {
+avancar.addEventListener("click", () => {
+  if (folhaAtual < folhas.length) {
+    folhas[folhaAtual].classList.add("virada");
     folhaAtual++;
-    mostrarFolha(folhaAtual);
   }
 });
 
-btnVoltar.addEventListener("click", () => {
+voltar.addEventListener("click", () => {
   if (folhaAtual > 0) {
     folhaAtual--;
-    mostrarFolha(folhaAtual);
+    folhas[folhaAtual].classList.remove("virada");
   }
 });
