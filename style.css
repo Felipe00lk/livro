@@ -7,7 +7,12 @@ p{
   font-size:20px;
 
 }
+.titulo{
+  background:liner-gradient{to right blue, green};
+  color:purple;
 
+
+}
 body {
   background: #2b2b2b;
   font-family: Georgia, serif;
