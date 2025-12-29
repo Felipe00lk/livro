@@ -3,7 +3,10 @@
   padding: 0;
   box-sizing: border-box;
 }
+p{
+  font-size:20px;
 
+}
 
 body {
   background: #2b2b2b;
